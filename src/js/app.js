@@ -1,5 +1,5 @@
 angular
-  .module('gamelibrary', [
+  .module('gameLibrary', [
     'ui.router',
     'ngResource',
     'angular-jwt'
