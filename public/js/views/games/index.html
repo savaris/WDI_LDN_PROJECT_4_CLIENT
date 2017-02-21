@@ -1,0 +1,11 @@
+<h1>Games Index</h1>
+
+<ul>
+  <li ng-repeat="game in gamesIndex.games">
+    <div>
+      <img src="{{ game.cover_img }}" width="200">
+      <h6>{{ game.title }}</h6>
+      <p>{{ game.description }}</p>
+    </div>
+  </li>
+</ul>
