@@ -1,53 +1,29 @@
 <!DOCTYPE html>
 <html ng-app="gameLibrary">
-  <head>
-    <meta charset="utf-8">
-    <title>Games Library</title>
-    <base href="/" />
-    <!-- inject:js -->
-    <script src="js/app.js"></script>
-    <!-- endinject -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- endinject -->
-  </head>
-  <body ng-controller="MainCtrl as main">
-    <header>
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" ui-sref="home">Gaming Library</a></li>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-              <li ng-show="main.user">
-                <p class="navbar-text">Welcome, {{ main.user.username }}</p>
-              <li ng-hide="main.user">
-                <a ui-sref="register">Register</a>
-              </li>
-              <li ng-hide="main.user">
-                <a ui-sref="login">Login</a>
-              </li>
-              <li ng-show="main.user">
-                <a ui-sref="usersIndex">Users</a>
-              </li>
-              <li ng-show="main.user">
-                <a ng-click="main.logout()">Logout</a>
-              </li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-    </header>
-    <main class="container" ui-view></main>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Games Library</title>
+  <base href="/" />
+  <!-- inject:js -->
+  <script src="js/app.js"></script>
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endinject -->
+</head>
+<body ng-controller="MainCtrl as main">
+  <nav>
+    <div class="nav-wrapper">
+      <a ui-sref="home">Gaming Library</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li ng-show="main.user"><a> Welcome {{ main.user.username }} </a></li>
+        <li ng-hide="main.user"><a ui-sref="register">Register</a></li>
+        <li ng-hide="main.user"><a ui-sref="login">Log In</a></li>
+        <li ng-show="main.user"><a ui-sref="usersIndex">Recent Users</a></li>
+        <li ng-show="main.user"><a ng-click="main.logout()">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class="container" ui-view></main>
+</body>
 </html>
