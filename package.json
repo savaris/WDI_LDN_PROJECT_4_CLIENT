@@ -88,5 +88,14 @@
   },
   "engines": {
     "node": "6.4.0"
+  },
+  "overrides":{
+    "materialize":{
+      "main":[
+        "css/normalize.css",
+        "css/materialize.css",
+        "fonts/**"
+      ]
+    }
   }
 }

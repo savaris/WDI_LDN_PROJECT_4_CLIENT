@@ -1,4 +1,23 @@
 <img src="{{ gamesShow.game.cover_img }}" width="300">
 <h2>{{ gamesShow.game.title }}</h2>
 <p>{{ gamesShow.game.description }}</p>
-<p>{{ gamesShow.game.critic_rating }}</p>
+<p><span>Critic rating: </span>{{ gamesShow.game.critic_rating }}</p>
+
+<form ng-submit="gamesShow.createLibrary()">
+  <div class="switch">
+    <label>
+      Not Played
+      <input id="played" value="{{gamesShow.library.played}}" ng-click="gamesShow.library.played = !gamesShow.library.played" ng-checked="gamesShow.library.played" type="checkbox" ng-model="gamesShow.library.played">
+      {{gamesShow.library.played}}
+      <span class="lever"></span>
+      Played
+    </label>
+    <label>
+      Not Owned
+      <input id="owned" value="{{gamesShow.library.owned}}" ng-click="gamesShow.library.owned = !gamesShow.library.owned" ng-checked="gamesShow.library.owned" type="checkbox" ng-model="gamesShow.library.owned">
+      {{gamesShow.library.owned}}
+      <span class="lever"></span>
+      Owned
+    </label>
+  </div>
+</form>
