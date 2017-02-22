@@ -1,2 +1,46 @@
-<h2>{{usersShow.user.username}}</h2>
-<h3>{{usersShow.user.email}}</h3>
+<h2 ng-show="usersShow.user.libraries.length">{{usersShow.user.username}}'s saved games</h2>
+<h2 ng-hide="usersShow.user.libraries.length">You haven't browsed any games yet</h2>
+
+<div class="">
+  <h3>Games I own</h3>
+  <div class="row">
+    <div class="col s4" ng-repeat="library in usersShow.gamesOwned">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{ library.game.cover_img }}">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{ library.game.title}}<i class="material-icons right"></i></span>
+          <p><a ui-sref="gamesShow({ id: library.game.id })">Click for more details.</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><i class="material-icons right">Dismiss</i></span>
+          <br>
+          <p>{{ library.game.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="">
+  <h3>Games I've played</h3>
+  <div class="row">
+    <div class="col s4" ng-repeat="library in usersShow.gamesPlayed">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{ library.game.cover_img }}">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{ library.game.title}}<i class="material-icons right"></i></span>
+          <p><a ui-sref="gamesShow({ id: library.game.id })">Click for more details.</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><i class="material-icons right">Dismiss</i></span>
+          <br>
+          <p>{{ library.game.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

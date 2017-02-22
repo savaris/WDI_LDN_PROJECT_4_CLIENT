@@ -2,28 +2,64 @@ angular
 .module('gameLibrary')
 .controller('GamesShowCtrl', GamesShowCtrl);
 
-GamesShowCtrl.$inject = ['Game', 'Library', '$stateParams', 'CurrentUserService'];
-function GamesShowCtrl(Game, Library, $stateParams, CurrentUserService){
+GamesShowCtrl.$inject = ['$scope', '$state','User', 'Game', 'Library', '$stateParams', 'CurrentUserService'];
+function GamesShowCtrl($scope, $state, User, Game, Library, $stateParams, CurrentUserService){
   const vm = this;
 
-   CurrentUserService.currentUser.library.forEach((game) => {
-    if ($stateParams.id == game.game_id) {
-      vm.library = game;
+  vm.user = User.get({id: CurrentUserService.currentUser.id});
+
+  setTimeout(function(){
+    let count = 1;
+    console.log(vm.user.libraries);
+    if(vm.user.libraries.length === 0) {
+      console.log('this one')
+      saveNewGame();
     } else {
-      vm.library = { played: false, owned: false };
+      vm.user.libraries.forEach(game => {
+        count++;
+        if ($stateParams.id == game.game.id && !vm.library) {
+          vm.library = game;
+          console.log(vm.library, 'library found');
+        } else if (count > vm.user.libraries.length && !vm.library){
+          saveNewGame();
+        }
+      });
     }
-  })
-  console.log(vm.library);
+    $scope.$apply();
+  }, 500);
+
 
   vm.game = Game.get($stateParams);
+
+
+  function saveNewGame(){
+    const object = {
+      played: false,
+      owned: false,
+      user_id: CurrentUserService.currentUser.id,
+      game_id: parseInt($stateParams.id)
+    };
+    Library
+    .save({ library : object })
+    .$promise
+    .then(data => {
+      console.log('we now have this new game');
+      vm.library = data;
+    });
+
+  }
+  vm.updateLibrary = function(){
+    Library
+    .update( {id: vm.library.id}, { library: vm.library })
+    .$promise
+    .then(data => {
+      vm.library = data;
+      console.log('success', data);
+      $state.go('gamesIndex');
+    });
+  };
 }
 
-// vm.update = function(){
-//   Game
-//   .update( { id: CurrentUserService.currentUser.library, user: vm.user})
-//   .$promise
-//   .then(response => {
-//     $state.go('gamesShow', { id: CurrentUserService.currentUser._id });
-//   });
-// };
+
+
 // }
