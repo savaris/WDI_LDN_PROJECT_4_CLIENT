@@ -4,5 +4,7 @@ angular
 
 libraryFactory.$inject = ['API', '$resource'];
 function libraryFactory(API, $resource){
-  return $resource(`${API}/libraries/:id`, { id: '@_id'});
+  return $resource(`${API}/libraries/:id`, { id: '@_id'},{
+    'update': { method: 'PUT'}
+  });
 }
