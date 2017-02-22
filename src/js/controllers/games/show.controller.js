@@ -17,3 +17,13 @@ function GamesShowCtrl(Game, Library, $stateParams, CurrentUserService){
 
   vm.game = Game.get($stateParams);
 }
+
+// vm.update = function(){
+//   Game
+//   .update( { id: CurrentUserService.currentUser.library, user: vm.user})
+//   .$promise
+//   .then(response => {
+//     $state.go('gamesShow', { id: CurrentUserService.currentUser._id });
+//   });
+// };
+// }
