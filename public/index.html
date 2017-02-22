@@ -12,16 +12,19 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
+  <ul id="profile" class="dropdown-content">
+    <li><a ui-sref="usersShow({ id: main.user.id })">View Profile</a></li>
+    <li class="divider"></li>
+    <li ng-show="main.user"><a ng-click="main.logout()">Log Out</a></li>
+  </ul>
   <nav>
     <div class="nav-wrapper">
       <a ui-sref="home">Gaming Library</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li ng-show="main.user"><a> Welcome {{ main.user.username }} </a></li>
         <li ng-hide="main.user"><a ui-sref="register">Register</a></li>
         <li ng-hide="main.user"><a ui-sref="login">Log In</a></li>
-        <li ng-show="main.user"><a ui-sref="usersIndex">Recent Users</a></li>
-        <li ng-show="main.user"><a ui-sref="gamesIndex">Games Index</a></li>
-        <li ng-show="main.user"><a ng-click="main.logout()">Log Out</a></li>
+        <li ng-show="main.user"><a ui-sref="gamesIndex">View Games</a></li>
+        <li ng-show="main.user"><a class="dropdown-button" href="#!" data-activates="profile">{{ main.user.username }}</a></li>
       </ul>
     </div>
   </nav>

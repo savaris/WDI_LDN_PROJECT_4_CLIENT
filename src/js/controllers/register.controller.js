@@ -11,7 +11,7 @@ function RegisterCtrl(User, $state, CurrentUserService){
     .$promise
     .then(() => {
       CurrentUserService.getUser();
-      $state.go('usersIndex');
+      $state.go('gamesIndex');
     }, err => {
       console.log(err);
     });

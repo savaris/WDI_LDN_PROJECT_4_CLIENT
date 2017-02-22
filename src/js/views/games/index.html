@@ -3,8 +3,8 @@
 <ul>
   <li ng-repeat="game in gamesIndex.games">
     <div>
-      <img src="{{ game.cover_img }}" width="200">
-      <h6 ui-sref="gamesShow({ id: game.id })">{{ game.title }}</h6>
+      <img ui-sref="gamesShow({ id: game.id })" src="{{ game.cover_img }}" width="200">
+      <h6>{{ game.title }}</h6>
     </div>
   </li>
 </ul>
