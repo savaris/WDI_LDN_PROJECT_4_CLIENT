@@ -3,37 +3,31 @@
 <p>{{ gamesShow.game.description }}</p>
 <div>
 
-<a class="waves-effect waves-light btn" href="#modal1">Images</a>
+  <a class="waves-effect waves-light btn" href="#modal1">Screenshots</a>
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Dismiss</a>
+      <div class="carousel">
+        <a ng-repeat=" screenshot in gamesShow.game.screenshots"class="carousel-item"><img ng-src="gamesShow.game.screenshots"></a>
+      </div>
     </div>
   </div>
 
-<a class="waves-effect waves-light btn" href="#modal1">Trailer</a>
-  <div id="modal1" class="modal">
+  <!-- <a class="waves-effect waves-light btn" href="#modal2">Gameplay</a>
+  <div id="modal2" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <iframe ng-src="{{ trustSrc(https://www.youtube.com/embed/+ gamesShow.game.video_url)}}" width="600px" height="380px"></iframe>
     </div>
   </div>
-</div>
+</div> -->
 
-<p><span>Critic rating: </span>{{ gamesShow.game.critic_rating }}</p>
-<p><span>Release Date: </span>{{ gamesShow.game.release_date}}</p>
-<p><span>Time to beat: </span>{{ gamesShow.game.time_to_beat }}</p>
-<p><span>Pegi Rating: </span>{{ gamesShow.game.pegi_rating }}</p>
-<p><span>Genres: </span>{{ gamesShow.game.genres }}</p>
-<p><span>Platforms: </span>{{ gamesShow.game.platforms }}</p>
+<p class="gameShow"><span>Critic rating: </span>{{ gamesShow.game.critic_rating }}</p>
+<p class="gameShow"><span>Release Date: </span>{{ gamesShow.game.release_date}}</p>
+<p class="gameShow"><span>Time to beat: </span>{{ gamesShow.game.time_to_beat }}</p>
+<p class="gameShow"><span>Pegi Rating: </span>{{ gamesShow.game.pegi_rating }}</p>
+<p class="gameShow"><span>Genres: </span>{{ gamesShow.game.genres }}</p>
+<p class="gameShow"><span>Platforms: </span>{{ gamesShow.game.platforms }}</p>
 
 <form ng-if="gamesShow.library" ng-submit="gamesShow.updateLibrary()">
   <div class="switch">
@@ -57,13 +51,13 @@
 
 <div ng-if="gamesShow.library">
   <ul class="commentsList">
-    <h4>Comments:</h4>
+    <h4 class="commentShow">Comments:</h4>
     <li ng-hide="gamesShow.game.comments.length">No comments on this game yet</li>
     <li ng-repeat="comment in gamesShow.game.comments">
-      <h6>{{comment.comment_poster.full_name}}</h6>
+      <h6 class="commentShow">{{comment.comment_poster.full_name}}</h6>
       <img class="profileThumbnail" src="{{comment.comment_poster.profile_img}}" alt="">
-      <h6>{{comment.body}}</h6>
-      <p>{{comment.created_at | timeAgo}}</p>
+      <h6 class="commentPost">{{comment.body}}</h6>
+      <p class="commentShow">Posted {{comment.created_at | timeAgo}}</p>
     </li>
   </ul>
   <form ng-submit="gamesShow.submitComment()">

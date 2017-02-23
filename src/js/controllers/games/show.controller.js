@@ -6,7 +6,15 @@ GamesShowCtrl.$inject = ['$scope', '$state','User', 'Game', 'Library', '$statePa
 function GamesShowCtrl($scope, $state, User, Game, Library, $stateParams, CurrentUserService, Comment){
   const vm = this;
 
+  $scope.trustSrc = function(src) {
+    return $sce.trustAsResourceUrl(src);
+  };
+  $(document).ready(function(){
+    $('.carousel').carousel();
+  });
+
   $('#modal1').modal();
+  $('#modal2').modal();
 
   vm.user = User.get({id: CurrentUserService.currentUser.id});
 

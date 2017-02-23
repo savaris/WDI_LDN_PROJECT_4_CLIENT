@@ -27,6 +27,10 @@ p.ng-binding {
   font-size: 11.6px;
 }
 
+p.gameShow {
+  font-size: 18px;
+}
+
 i.material-icons.right {
   font-size:18px;
   font-style: normal;
@@ -48,10 +52,34 @@ p.ng-binding.ng-scope {
     margin: 10px 0;
     border: 1px solid black;
     min-height: 50px;
-    .profileThumbnail {
-      float: right;
-      max-height: 50px;
-      width: auto;
+    border-radius: 20px;
+    border: 2px solid black;
+      .profileThumbnail {
+        float: right;
+        max-height: 50px;
+        width: auto;
+        border-radius: 40px;
+        border:2px solid black;
+        margin: -1.2% -3% auto;
+      }
     }
   }
+
+h6.commentShow{
+  font-size: 16.6px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+h6.commentPost{
+  font-size: 16px;
+}
+
+h4.commentShow {
+  font-weight: bold;
+  text-align: center;
+}
+
+h6,h4,p.commentShow {
+  margin-left: 2%;
 }
