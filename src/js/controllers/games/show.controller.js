@@ -6,23 +6,16 @@ GamesShowCtrl.$inject = ['$scope', '$sce', '$state','User', 'Game', 'Library', '
 function GamesShowCtrl($scope, $sce, $state, User, Game, Library, $stateParams, CurrentUserService, Comment){
   const vm = this;
 
+   $('.materialboxed').materialbox();
+
   $scope.trustSrc = function(src) {
     return $sce.trustAsResourceUrl(src);
   };
-  $(document).ready(function(){
-    $('.carousel').carousel();
-  });
-
-  $('#modal1').modal();
-  $('#modal2').modal();
-
-  vm.user = User.get({id: CurrentUserService.currentUser.id});
 
   setTimeout(function(){
     let count = 1;
     console.log(vm.user.libraries);
     if(vm.user.libraries.length === 0) {
-      console.log('this one')
       saveNewGame();
     } else {
       vm.user.libraries.forEach(game => {
@@ -39,7 +32,13 @@ function GamesShowCtrl($scope, $sce, $state, User, Game, Library, $stateParams, 
   }, 500);
 
 
-  vm.game = Game.get($stateParams);
+  Game
+    .get($stateParams)
+    .$promise
+    .then(data => {
+      vm.game = data;
+      vm.user = User.get({id: CurrentUserService.currentUser.id});
+    });
 
   vm.submitComment = () => {
     if (vm.newComment && vm.newComment.body && vm.newComment.body.length){

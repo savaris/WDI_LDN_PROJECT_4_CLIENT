@@ -1,33 +1,35 @@
 <img src="{{ gamesShow.game.cover_img }}" width="300">
 <h2>{{ gamesShow.game.title }}</h2>
 <p>{{ gamesShow.game.description }}</p>
-<div>
-
-  <a class="waves-effect waves-light btn" href="#modal1">Screenshots</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <div class="carousel">
-        <a ng-repeat=" screenshot in gamesShow.game.screenshots"class="carousel-item"><img ng-src="gamesShow.game.screenshots"></a>
-      </div>
-    </div>
+<hr>
+<div class="row">
+  <div class="col m4">
+    <p class="gameShow"><span class ="fields">Critic rating: </span>{{ gamesShow.game.critic_rating }}</p>
   </div>
-
-  <a class="waves-effect waves-light btn" href="#modal2">Gameplay</a>
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <iframe ng-src="{{ trustSrc('https://www.youtube.com/embed/'+ gamesShow.game.video_url)}}" width="600px" height="380px"></iframe>
-    </div>
+  <div class="col m4">
+    <p class="gameShow"><span class ="fields">Release Date: </span>{{ gamesShow.game.release_date}}</p>
+  </div>
+  <div class="col m4">
+    <p class="gameShow"><span class ="fields">Pegi Rating: </span>{{ gamesShow.game.pegi_rating }}</p>
   </div>
 </div>
-<div class="gameFields">
-<p class="gameShow"><span class ="fields">Critic rating: </span>{{ gamesShow.game.critic_rating }}</p>
-<p class="gameShow"><span class ="fields">Release Date: </span>{{ gamesShow.game.release_date}}</p>
-<p class="gameShow"><span class ="fields">Time to beat: </span>{{ gamesShow.game.time_to_beat }}</p>
-<p class="gameShow"><span class ="fields">Pegi Rating: </span>{{ gamesShow.game.pegi_rating }}</p>
-<p class="gameShow"><span class ="fields">Genres: </span>{{ gamesShow.game.genres }}</p>
-<p class="gameShow"><span class ="fields">Platforms: </span>{{ gamesShow.game.platforms }}</p>
+<hr>
+<div class="row">
+  <div class="col m12">
+    <h3>Gameplay</h3>
+    <iframe ng-src="{{ trustSrc('https://www.youtube.com/embed/'+ gamesShow.game.video_url+'?autoplay=1')}}" frameborder="0" width="600px" height="400px"></iframe>
+  </div>
+</div>
+<div class="row">
+  <h3>Screenshot</h3>
+  <ul>
+    <li ng-repeat="screenshot in gamesShow.game.screenshots">
+      <div class="col m3">
+        <img class="materialboxed" src="{{ screenshot }}" width="200">
+      </div>
+    </li>
+  </ul>
+</div>
 
 <form ng-if="gamesShow.library" ng-submit="gamesShow.updateLibrary()">
   <div class="switch">
@@ -49,18 +51,6 @@
   <button class="btn waves-effect waves-light" type="submit" name="action">Update</button>
 </form>
 
-<div ng-if="gamesShow.library">
-  <ul class="commentsList">
-    <h4 class="commentShow">Comments:</h4>
-    <li ng-hide="gamesShow.game.comments.length">No comments on this game yet</li>
-    <li ng-repeat="comment in gamesShow.game.comments">
-      <h6 class="commentShow">{{comment.comment_poster.full_name}}</h6>
-      <img class="profileThumbnail" src="{{comment.comment_poster.profile_img}}" alt="">
-      <h6 class="commentPost">{{comment.body}}</h6>
-      <p class="commentShow">Posted {{comment.created_at | timeAgo}}</p>
-    </li>
-  </ul>
-  <form ng-submit="gamesShow.submitComment()">
-    <input type="text" ng-model="gamesShow.newComment.body" placeholder="Tell us what you think">
-  </form>
-</div>
+<script type="text/javascript">
+  $('.materialboxed').materialbox();
+</script>
