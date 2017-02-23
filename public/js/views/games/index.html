@@ -1,13 +1,7 @@
+<div class="progress">
+  <div class="indeterminate"></div>
+</div>
 <h1>Games Index</h1>
-
-<!-- <ul>
-  <li ng-repeat="game in gamesIndex.games">
-    <div>
-      <img ui-sref="gamesShow({ id: game.id })" src="{{ game.cover_img }}" width="200">
-      <h6>{{ game.title }}</h6>
-    </div>
-  </li>
-</ul> -->
 <div class="row">
   <div class="col s4" ng-repeat="game in gamesIndex.games">
     <div class="card">
@@ -25,19 +19,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<!-- <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src="{{ game.cover_img }}">
-          <span class="card-title"></span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">More Info</i></a>
-        </div>
-        <div class="card-content">
-          <p>{{ game.title }}</p>
-        </div>
-      </div>
-    </div>
-  </div> -->
+  </div>
