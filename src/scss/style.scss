@@ -1,5 +1,9 @@
 // Import all of your scss files here
 
+body {
+  text-align: center;
+}
+
 .card{
   width: 280px;
   text-align: center;
@@ -11,4 +15,24 @@ img.activator {
 
 div.card-content{
   height: 142px;
+}
+
+span.card-title.activator.grey-text.text-darken-4.ng-binding {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+p.ng-binding {
+  font-size: 9.6px;
+}
+
+i.material-icons.right {
+  font-size:18px;
+  font-style: normal;
+  margin-right: 45%;
+  font-weight: normal;
+}
+
+a.logo {
+  margin-left: -68%;
 }

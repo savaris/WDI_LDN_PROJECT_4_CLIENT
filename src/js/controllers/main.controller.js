@@ -19,3 +19,5 @@ function MainCtrl($rootScope, CurrentUserService, $state) {
     CurrentUserService.removeUser();
   };
 }
+
+$(".button-collapse").sideNav();
