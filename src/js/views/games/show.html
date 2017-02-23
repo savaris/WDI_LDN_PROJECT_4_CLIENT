@@ -1,7 +1,40 @@
 <img src="{{ gamesShow.game.cover_img }}" width="300">
 <h2>{{ gamesShow.game.title }}</h2>
 <p>{{ gamesShow.game.description }}</p>
+<div>
+
+<a class="waves-effect waves-light btn" href="#modal1">Images</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Dismiss</a>
+    </div>
+  </div>
+
+<a class="waves-effect waves-light btn" href="#modal1">Trailer</a>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+</div>
+
 <p><span>Critic rating: </span>{{ gamesShow.game.critic_rating }}</p>
+<p><span>Release Date: </span>{{ gamesShow.game.release_date}}</p>
+<p><span>Time to beat: </span>{{ gamesShow.game.time_to_beat }}</p>
+<p><span>Pegi Rating: </span>{{ gamesShow.game.pegi_rating }}</p>
+<p><span>Genres: </span>{{ gamesShow.game.genres }}</p>
+<p><span>Platforms: </span>{{ gamesShow.game.platforms }}</p>
+
 <form ng-if="gamesShow.library" ng-submit="gamesShow.updateLibrary()">
   <div class="switch">
     <label>

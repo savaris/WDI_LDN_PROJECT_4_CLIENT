@@ -6,6 +6,8 @@ GamesShowCtrl.$inject = ['$scope', '$state','User', 'Game', 'Library', '$statePa
 function GamesShowCtrl($scope, $state, User, Game, Library, $stateParams, CurrentUserService, Comment){
   const vm = this;
 
+  $('#modal1').modal();
+
   vm.user = User.get({id: CurrentUserService.currentUser.id});
 
   setTimeout(function(){
@@ -71,7 +73,3 @@ function GamesShowCtrl($scope, $state, User, Game, Library, $stateParams, Curren
     });
   };
 }
-
-
-
-// }
