@@ -25,7 +25,7 @@
         <li ng-hide="main.user"><a ui-sref="register">Register</a></li>
         <li ng-hide="main.user"><a ui-sref="login">Log In</a></li>
         <li ng-show="main.user"><a ui-sref="gamesIndex">View Games</a></li>
-        <li ng-show="main.user"><a class="dropdown-button" href="#!" data-activates="profile">{{ main.user.username }}</a></li>
+        <li ng-show="main.user"><a class="dropdown-button" href="#!" data-activates="profile">{{ main.user.first_name }}</a></li>
       </ul>
     </div>
   </nav>

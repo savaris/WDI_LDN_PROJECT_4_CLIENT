@@ -41,3 +41,17 @@ a.logo {
 p.ng-binding.ng-scope {
   font-size: 18px;
 }
+
+.commentsList {
+  text-align: left;
+  li {
+    margin: 10px 0;
+    border: 1px solid black;
+    min-height: 50px;
+    .profileThumbnail {
+      float: right;
+      max-height: 50px;
+      width: auto;
+    }
+  }
+}

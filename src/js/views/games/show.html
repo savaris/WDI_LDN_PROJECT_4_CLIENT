@@ -5,18 +5,35 @@
 <form ng-if="gamesShow.library" ng-submit="gamesShow.updateLibrary()">
   <div class="switch">
     <label>
+      {{ gamesShow.library.played ? '' : 'Not' }} Played
+      <br>
       <input id="played" value="{{gamesShow.library.played}}" type="checkbox" ng-model="gamesShow.library.played">
       <span class="lever"></span>
-      {{ gamesShow.library.played ? '' : 'Not' }} Played
     </label>
     <br>
-    <br>
     <label>
+      {{ gamesShow.library.owned ? '' : 'Not' }} Owned
+      <br>
       <input id="owned" value="{{gamesShow.library.owned}}"  type="checkbox" ng-model="gamesShow.library.owned">
       <span class="lever"></span>
-      {{ gamesShow.library.owned ? '' : 'Not' }} Owned
     </label>
   </div>
   <br>
   <button class="btn waves-effect waves-light" type="submit" name="action">Update</button>
 </form>
+
+<div ng-if="gamesShow.library">
+  <ul class="commentsList">
+    <h4>Comments:</h4>
+    <li ng-hide="gamesShow.game.comments.length">No comments on this game yet</li>
+    <li ng-repeat="comment in gamesShow.game.comments">
+      <h6>{{comment.comment_poster.full_name}}</h6>
+      <img class="profileThumbnail" src="{{comment.comment_poster.profile_img}}" alt="">
+      <h6>{{comment.body}}</h6>
+      <p>{{comment.created_at | timeAgo}}</p>
+    </li>
+  </ul>
+  <form ng-submit="gamesShow.submitComment()">
+    <input type="text" ng-model="gamesShow.newComment.body" placeholder="Tell us what you think">
+  </form>
+</div>

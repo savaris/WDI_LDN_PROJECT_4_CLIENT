@@ -2,8 +2,8 @@ angular
 .module('gameLibrary')
 .controller('GamesShowCtrl', GamesShowCtrl);
 
-GamesShowCtrl.$inject = ['$scope', '$state','User', 'Game', 'Library', '$stateParams', 'CurrentUserService'];
-function GamesShowCtrl($scope, $state, User, Game, Library, $stateParams, CurrentUserService){
+GamesShowCtrl.$inject = ['$scope', '$state','User', 'Game', 'Library', '$stateParams', 'CurrentUserService', 'Comment'];
+function GamesShowCtrl($scope, $state, User, Game, Library, $stateParams, CurrentUserService, Comment){
   const vm = this;
 
   vm.user = User.get({id: CurrentUserService.currentUser.id});
@@ -31,6 +31,18 @@ function GamesShowCtrl($scope, $state, User, Game, Library, $stateParams, Curren
 
   vm.game = Game.get($stateParams);
 
+  vm.submitComment = () => {
+    if (vm.newComment && vm.newComment.body && vm.newComment.body.length){
+      vm.newComment.game_id = $stateParams.id;
+      Comment
+      .save({comment: vm.newComment})
+      .$promise
+      .then(data => {
+        vm.game.comments.unshift(data);
+        vm.newComment = {};
+      });
+    }
+  };
 
   function saveNewGame(){
     const object = {
