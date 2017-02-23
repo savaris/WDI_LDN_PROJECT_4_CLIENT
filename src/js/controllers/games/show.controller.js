@@ -2,8 +2,8 @@ angular
 .module('gameLibrary')
 .controller('GamesShowCtrl', GamesShowCtrl);
 
-GamesShowCtrl.$inject = ['$scope', '$state','User', 'Game', 'Library', '$stateParams', 'CurrentUserService', 'Comment'];
-function GamesShowCtrl($scope, $state, User, Game, Library, $stateParams, CurrentUserService, Comment){
+GamesShowCtrl.$inject = ['$scope', '$sce', '$state','User', 'Game', 'Library', '$stateParams', 'CurrentUserService', 'Comment'];
+function GamesShowCtrl($scope, $sce, $state, User, Game, Library, $stateParams, CurrentUserService, Comment){
   const vm = this;
 
   $scope.trustSrc = function(src) {
