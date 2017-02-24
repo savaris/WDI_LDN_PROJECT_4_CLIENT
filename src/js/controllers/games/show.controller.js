@@ -6,11 +6,15 @@ GamesShowCtrl.$inject = ['$scope', '$sce', '$state','User', 'Game', 'Library', '
 function GamesShowCtrl($scope, $sce, $state, User, Game, Library, $stateParams, CurrentUserService, Comment){
   const vm = this;
 
-   $('.materialboxed').materialbox();
+
 
   $scope.trustSrc = function(src) {
     return $sce.trustAsResourceUrl(src);
   };
+
+  $(document).ready(function(){
+    $('.materialboxed').modal();
+  });
 
   setTimeout(function(){
     let count = 1;
@@ -75,7 +79,7 @@ function GamesShowCtrl($scope, $sce, $state, User, Game, Library, $stateParams, 
     .$promise
     .then(data => {
       vm.library = data;
-      console.log('success', data);
+      console.log('success eeeeee we are here', data);
       $state.go('gamesIndex');
     });
   };

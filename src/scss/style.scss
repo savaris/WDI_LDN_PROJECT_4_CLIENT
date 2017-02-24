@@ -3,7 +3,64 @@
 body {
   text-align: center;
   font-family: 'Homenaje', sans-serif;
+  margin: 0;
+  background: #505151;
+  color:#66b8da;
 }
+
+nav {
+  background: transparent;
+  border-bottom: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  a.siteLogo{
+    color: #66b8da;
+    font-weight: bolder;
+    font-size: 24px;
+    border-radius: 20px;
+    display: inline-block;
+    float: left;
+    margin-left: 2%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #66b8da;
+  transition: .6s background;
+}
+
+a.viewGames {
+  color: #66b8da;
+  border: 2px solid #66b8da;
+  font-size: 20px;
+  border-radius: 20px;
+  height: 30px;
+  margin-top: 15px;
+  display: inline;
+}
+
+a.dropdown-button {
+  color: #66b8da;
+  border: 2px solid #66b8da;
+  font-size: 20px;
+  border-radius: 20px;
+  height: 30px;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+a.dropdown-button.ng-binding {
+  color: #66b8da;
+  border: 2px solid #66b8da;
+  font-size: 20px;
+  border-radius: 20px;
+  margin: 0 auto;
+  height: 30px;
+  margin-top: 15px;
+  display: inline;
+}
+
 
 .card{
   width: 280px;
@@ -59,7 +116,7 @@ p.ng-binding.ng-scope {
         max-height: 50px;
         width: auto;
         border-radius: 40px;
-        border:2px solid black;
+        border:2px solid #66b8da;
         margin: -1.2% -3% auto;
       }
     }
@@ -86,4 +143,83 @@ h6,h4,p.commentShow {
 
 span.fields{
   font-weight: bold;
+}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade {
+   opacity: .5;
+}
+
+h3.noComment {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 2%
+}
+
+#MYGB {
+  color: #66b8da;
+  font-weight:100;
+  background: rgba(0,0,0,0.3);
+  // padding: 2rem;
+  width: 33%;
+  float: left;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  margin-left: -20%;
+  margin-top: 4%;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+
+a:hover{
+  background:rgba(0,0,0,0.9);
+}
+
+
+img.siteLogo {
+width: 60px;
+height: 68px;
+float: left;
+margin-left: 10%;
+}
+
+div.indeterminate {
+  background: #66b8da;
+}
+
+div.progress.indeterminate {
+  background: #cfe9fb;
+}
+
+button.btn.waves-effect.waves-light {
+  background: #66b8da;
+}
+
+input#username.ng-valid.ng-touched.ng-not-empty.ng-dirty.ng-valid-parse.valid {
+  border-bottom: 2px solid #66b8da;
+}
+
+label.active {
+  color: #66b8da;
+}
+
+input#email.validate.ng-valid.ng-not-empty.ng-dirty.ng-valid-parse.valid ng-touched {
+  border-bottom: 2px solid #66b8da;
 }

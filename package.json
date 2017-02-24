@@ -45,7 +45,7 @@
       "css": "**/*.css",
       "scss": "**/*.scss",
       "html": "**/*.html",
-      "images": "**/*.{png,jpg,jpeg,gif,ico}",
+      "images": "**/*.{png,jpg,jpeg,gif,ico,mp4}",
       "fonts": "**/*.{eot,svg,ttf,woff,woff2}"
     }
   },
