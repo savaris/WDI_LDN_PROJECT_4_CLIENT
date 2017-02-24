@@ -197,7 +197,7 @@ img.siteLogo {
 width: 60px;
 height: 68px;
 float: left;
-margin-left: 10%;
+margin-left: 0%;
 }
 
 div.indeterminate {
@@ -222,4 +222,8 @@ label.active {
 
 input#email.validate.ng-valid.ng-not-empty.ng-dirty.ng-valid-parse.valid ng-touched {
   border-bottom: 2px solid #66b8da;
+}
+
+div.col.m3.imageBox {
+  margin-top: 16px;
 }
