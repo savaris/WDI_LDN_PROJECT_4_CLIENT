@@ -20,8 +20,7 @@ Now that the data was tangible, I went onto create my wireframes to envision wha
 
 <img width="1269" alt="screen shot 2017-03-13 at 23 01 20" src="https://cloud.githubusercontent.com/assets/23128874/23878751/29b0879e-0841-11e7-9bab-9ccb9c6c8089.png">
 
-<img width="794" alt="screen shot 2017-03-13 at 23 01 46" src="https://cloud.githubusercontent.com/assets/23128874/23878762/357e26d0-0841-11e7-9a02-2829d2fb3ced.png">
-
+<img width="1268" alt="screen shot 2017-03-14 at 02 03 46" src="https://cloud.githubusercontent.com/assets/23128874/23882762/9f49441e-085a-11e7-8a9d-ff8a8794c202.png">
 
 ---
 
