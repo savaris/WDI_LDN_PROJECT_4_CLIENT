@@ -42,5 +42,5 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
       controllerAs: 'gamesShow'
     });
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/'); 
 }
