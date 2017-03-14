@@ -68,7 +68,7 @@ function GamesShowCtrl($scope, $sce, $state, User, Game, Library, $stateParams, 
     .save({ library : object })
     .$promise
     .then(data => {
-      console.log('we now have this new game');
+      console.log('We now have this new game');
       vm.library = data;
     });
 
@@ -79,7 +79,7 @@ function GamesShowCtrl($scope, $sce, $state, User, Game, Library, $stateParams, 
     .$promise
     .then(data => {
       vm.library = data;
-      console.log('success eeeeee we are here', data);
+      console.log('Success library updated', data);
       $state.go('gamesIndex');
     });
   };
