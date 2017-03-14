@@ -51,7 +51,8 @@
   },
   "dependencies": {
     "express": "^4.14.0",
-    "forever": "^0.15.3"
+    "forever": "^0.15.3",
+    "gulp-replace": "^0.5.4"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -89,9 +90,9 @@
   "engines": {
     "node": "6.4.0"
   },
-  "overrides":{
-    "materialize":{
-      "main":[
+  "overrides": {
+    "materialize": {
+      "main": [
         "css/normalize.css",
         "css/materialize.css",
         "fonts/**"
