@@ -109,8 +109,6 @@ By using all these functions in conjunction with each other and utilising scss t
 
 ---
 
-A fully workinf version of the app can be found on:
-
 # Further implementations for the future.
 As with any piece of code further functionality/styling is always part of its core. As such, additional features I would like to include further down the line are:  
 
